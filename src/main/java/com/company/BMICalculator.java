@@ -1,6 +1,17 @@
-package com.company;
+package main.java.com.company;
 
-public class Main {
+public class BMICalculator {
+    int weight;
+    double height;
+
+    public BMICalculator (int weight, double height){
+        this.weight = weight;
+        this.height = height;
+    }
+
+    public void calculateBmi(){
+
+    }
 
     public static void main(String[] args) {
         int weight = 70;
