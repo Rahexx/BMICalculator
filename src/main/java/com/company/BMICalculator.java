@@ -11,12 +11,18 @@ public class BMICalculator {
         this.height = height / 100;
     }
 
-    public void calculateBmi(){
+    public double calculateBmi(){
         String weightInfo = MessageFormat.format("Twoja waga to: {0}", this.weight);
         String heightInfo = MessageFormat.format("Twój wzrost to: {0}", this.height);
 
         System.out.println(weightInfo);
         System.out.println(heightInfo);
+
+        if(this.weight <= 0 && this.height <= 0){
+            System.out.println("Podałeś złe wartości");
+
+            return 0;
+        }
 
         final double bmi = Math.floor(this.weight / (this.height * this.height));
 
@@ -24,6 +30,7 @@ public class BMICalculator {
 
         System.out.println(resultInfo);
 
+        return bmi;
     }
 
     public static void main(String[] args) {
