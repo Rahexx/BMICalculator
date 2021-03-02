@@ -1,5 +1,7 @@
 package main.java.com.company;
 
+import org.junit.jupiter.api.function.Executable;
+
 import java.text.MessageFormat;
 
 public class BMICalculator {
@@ -33,9 +35,23 @@ public class BMICalculator {
         return bmi;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        System.out.println(args[0] == null);
+        if(args[0] == null || args[1] == null){
+            throw new Exception("Błędne argument - null");
+        }
+
+        if(Character.isLetter(args[0].charAt(0)) && Character.isLetter(args[1].charAt(0))){
+            throw new Exception("Błędne argument");
+        }
+
+        if(args[0].contains(",") || args[1].contains(",")){
+            throw new Exception("Błędne argument");
+        }
+
         BMICalculator bmiCalculator = new BMICalculator(Integer.parseInt(args[0]), Double.parseDouble(args[1]) );
 
         bmiCalculator.calculateBmi();
+
     }
 }

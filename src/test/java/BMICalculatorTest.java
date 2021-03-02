@@ -31,4 +31,69 @@ class BMICalculatorTest {
         Assert.assertThat(fifthBmi, CoreMatchers.is(38));
         Assert.assertThat(sixthBmi, CoreMatchers.is(48));
     }
+
+    @Test
+    void mainZero() {
+        String[] args = {"0", "0"};
+
+        try{
+            BMICalculator.main(args);
+
+            assertTrue(true);
+        }catch (Exception e){
+            assertFalse(false);
+        }
+    }
+
+    @Test
+    void mainChar() {
+        String[] args = {"A", "B"};
+
+        try{
+            BMICalculator.main(args);
+
+            assertTrue(false);
+        }catch (Exception e){
+            assertFalse(false);
+        }
+    }
+
+    @Test
+    void thirdTestMain() {
+        String[] args = {"1", "1.0"};
+
+        try{
+            BMICalculator.main(args);
+
+            assertTrue(true);
+        }catch (Exception e){
+            assertFalse(false);
+        }
+    }
+
+    @Test
+    void fourthTestMain() {
+        String[] args = {"1", "1,0"};
+
+        try{
+            BMICalculator.main(args);
+
+            assertTrue(true);
+        }catch (Exception e){
+            assertFalse(false);
+        }
+    }
+
+    @Test
+    void fifthTestMain() {
+        String[] args = {"null", "null"};
+
+        try{
+            BMICalculator.main(args);
+
+            assertTrue(true);
+        }catch (Exception e){
+            assertFalse(false);
+        }
+    }
 }
