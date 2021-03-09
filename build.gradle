@@ -1,0 +1,3 @@
+apply plugin: 'application'
+//your code
+applicationDefaultJvmArgs = ["-Djavafx.embed.singleThread=true"]
